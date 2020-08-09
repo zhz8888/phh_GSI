@@ -14,10 +14,10 @@
 For example:
 
 ```
-git clone https://github.com/phhusson/treble_experimentations
-mkdir Lineage
-cd Lineage
-bash ../treble_experimentations/build-rom.sh android-8.1 lineage
+git clone https://github.com/zhz8888/phh_GSI.git
+mkdir Work
+cd Work
+bash ../phh_GSI/build-rom.sh android-8.1 lineage
 ```
 
 ## More flexible build script
@@ -25,13 +25,10 @@ bash ../treble_experimentations/build-rom.sh android-8.1 lineage
 (this has been tested much less)
 
 ```
-  bash ../treble_experimentations/build-dakkar.sh rr \
-    arm-aonly-gapps-su \
-    arm64-ab-go-nosu
+  bash ../phh_GSI/build-dakkar.sh aosp10 arm64-aonly-gapps-nosu
 ```
 
-The script should provide a help message if you pass something it
-doesn't understand
+The script should provide a help message if you pass something it doesn't understand
 
 # Using Docker
 
@@ -45,7 +42,7 @@ docker run -ti \
     -v $(pwd)/../treble_output:/treble_output \
     -w /treble_output \
     treble \
-    /bin/bash /treble/build-dakkar.sh rr \
+    /bin/bash /treble/build-dakkar.sh aosp10 \
     arm-aonly-gapps-su \
     arm64-ab-go-nosu
 ```
@@ -53,10 +50,7 @@ docker run -ti \
 # Conventions for commit messages:
 
 * `[UGLY]` Please make this patch disappear as soon as possible
-* `[master]` tag means that the commit should be dropped in a future
-  rebase
+* `[master]` tag means that the commit should be dropped in a future rebase
 * `[device]` tag means this change is device-specific workaround
-* `::device name::` will try to describe which devices are concerned
-  by this change
-* `[userfriendly]` This commit is NOT used for hardware support, but
-  to make the rom more user friendly
+* `::device name::` will try to describe which devices are concerned by this change
+* `[userfriendly]` This commit is NOT used for hardware support, but to make the rom more user friendly
