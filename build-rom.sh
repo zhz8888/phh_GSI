@@ -44,7 +44,7 @@ elif [ "$rom" == "lineage17" ];then
 	repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
 elif [ "$rom" == "rr" ];then
 	repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b pie
-elif [ "$rom" == "desc" ];then
+elif [ "$rom" == "descendant" ];then
 	repo init -u https://github.com/Descendant/manifest.git -b TwoDotThree
 elif [ "$rom" == "exthm" ];then
 	repo init -u https://github.com/exthmui/android.git -b exthm-10
