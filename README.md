@@ -25,7 +25,7 @@ bash ../phh_GSI/build-rom.sh android-8.1 lineage
 (this has been tested much less)
 
 ```
-  bash ../phh_GSI/build-dakkar.sh aosp10 arm64-aonly-gapps-nosu
+bash ../phh_GSI/build-dakkar.sh aosp10 arm64-aonly-gapps-nosu
 ```
 
 The script should provide a help message if you pass something it doesn't understand
