@@ -15,9 +15,12 @@ For example:
 
 ```
 git clone https://github.com/zhz8888/phh_GSI.git
+sudo chmod -R 777 phh_GSI/
+cd phh_GSI/
 mkdir Work
+sudo chmod -R 777 Work
 cd Work
-bash ../phh_GSI/build-rom.sh android-8.1 lineage
+bash ../build-rom.sh android-10.0 lineage170
 ```
 
 ## More flexible build script
@@ -25,7 +28,7 @@ bash ../phh_GSI/build-rom.sh android-8.1 lineage
 (this has been tested much less)
 
 ```
-bash ../phh_GSI/build-dakkar.sh aosp-10 arm64-aonly-gapps-nosu
+bash ../build-dakkar.sh aosp-10 arm64-aonly-gapps-nosu
 ```
 
 The script should provide a help message if you pass something it doesn't understand
