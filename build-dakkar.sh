@@ -27,6 +27,8 @@ read -p "Do you want to sync? (y/N) " build_dakkar_choice
 fi
 function help() {
     cat <<EOF
+English:
+
 Syntax:
 
   $myname [-j 2] <rom type> <variant>...
@@ -86,6 +88,77 @@ for example:
 * arm-aonly-vanilla-nosu-user
 * arm64-ab-gapps-su
 * a64-aonly-go-nosu
+
+中文:
+
+语法:
+
+  $myname [-j2] <ROM类型> <variant>...
+  
+选项:
+
+  -j   并行的线程数(默认为 $jobs)
+  
+ROM类型:
+
+  aex-pie
+  aicp-oreo
+  aokp-oreo
+  aosmp-pie
+  aosp80
+  aosp81
+  aosp90
+  aosp10
+  aquarios
+  carbon-oreo
+  crdroid-oreo
+  e-pie
+  e-oreo
+  havoc-pie
+  komodo-pie
+  lineage151
+  lineage160
+  mokee-oreo
+  pixel81
+  pixel90
+  potato-pie
+  rebellion-pie
+  rr-oreo
+  slim-oreo
+  graphene9
+  graphene10
+  
+dash-joined组合(in order):
+
+* 处理器类型
+  * "arm" ARM 32位
+  * "arm64" ARM 64位
+  * "a64" 让ARM 64位硬件运行ARM 32位系统
+  
+* A 或 A/B 分区布局 ("aonly" 或 "ab")
+
+* GApps选项
+  * "vanilla" 不包含GApps
+  * "gapps" 包含Open GApps
+  * "go" 包含Gapps Go
+  * "floss" to include floss
+  
+* 超级权限选择(即root) ("su" 或 "nosu")
+
+* 构建变量选择(可选)
+
+  * "eng" 开发构建
+  * "user" for prod build
+  * "userdebug" 调试版本(默认)
+  
+例如:
+
+  * arm-aonly-vanilla-nosu-user
+  * arm64-ab-gapps-su
+  * a64-aonly-go-nosu
+  
+If you want to see the English version,please slide up
+
 EOF
 }
 
