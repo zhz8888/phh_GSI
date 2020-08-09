@@ -32,7 +32,7 @@ else
     fi
 fi
 
-#We don't want to replace from AOSP since we'll be applying patches by hand
+# We don't want to replace from AOSP since we'll be applying patches by hand
 rm -f .repo/local_manifests/replace.xml
 if [ "$rom" == "carbon" ];then
 	repo init -u https://github.com/CarbonROM/android -b cr-6.1
@@ -40,8 +40,17 @@ elif [ "$rom" == "lineage15" ];then
 	repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
 elif [ "$rom" == "lineage16" ];then
 	repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
+elif [ "$rom" == "lineage17" ];then
+	repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
 elif [ "$rom" == "rr" ];then
 	repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b pie
+# Here is the configuration used in China
+elif [ "$rom" == "lineage15-cn" ];then
+	repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/lineageOS/LineageOS/android.git -b lineage-15.1
+elif [ "$rom" == "lineage16-cn" ];then
+	repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/lineageOS/LineageOS/android.git -b lineage-16.0
+elif [ "$rom" == "lineage17-cn" ];then
+	repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/lineageOS/LineageOS/android.git -b lineage-17.1
 fi
 
 if [ -d .repo/local_manifests ] ;then
@@ -62,7 +71,7 @@ else
     unzip  "$local_patches" -d patches
 fi
 
-#We don't want to replace from AOSP since we'll be applying patches by hand
+# We don't want to replace from AOSP since we'll be applying patches by hand
 rm -f .repo/local_manifests/replace.xml
 
 repo sync -c -j$jobs --force-sync
