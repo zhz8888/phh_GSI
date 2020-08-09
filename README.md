@@ -47,7 +47,7 @@ docker run -ti \
     arm64-ab-go-nosu
 ```
 
-# Conventions for commit messages:
+# Conventions for commit messages
 
 * `[UGLY]` Please make this patch disappear as soon as possible
 * `[master]` tag means that the commit should be dropped in a future rebase
