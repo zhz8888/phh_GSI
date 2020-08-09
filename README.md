@@ -20,7 +20,7 @@ cd phh_GSI/
 mkdir Work
 sudo chmod -R 777 Work
 cd Work
-bash ../build-rom.sh android-10.0 lineage170
+bash ../build-rom.sh android-10.0 lineage17
 ```
 
 ## More flexible build script
