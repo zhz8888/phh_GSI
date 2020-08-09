@@ -14,12 +14,10 @@
 For example:
 
 ```
-git clone https://github.com/zhz8888/phh_GSI.git
+git clone --recurse-submodules https://github.com/zhz8888/phh_GSI.git
+mkdir phh_GSI/Work
 sudo chmod -R 777 phh_GSI/
-cd phh_GSI/
-mkdir Work
-sudo chmod -R 777 Work
-cd Work
+cd phh_GSI/Work
 bash ../build-rom.sh android-10.0 lineage17
 ```
 
