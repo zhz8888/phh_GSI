@@ -10,11 +10,11 @@ if [ -z "$USER" ];then
 fi
 export LC_ALL=C
 
-manifest_url="https://android.googlesource.com/platform/manifest"
-aosp="android-8.1.0_r65"
-phh="android-8.1"
-
-if [ "$1" == "android-9.0" ];then
+if [ "$1" == "android-8.1" ];then
+    manifest_url="https://android.googlesource.com/platform/manifest"
+    aosp="android-8.1.0_r65"
+    phh="android-8.1"
+elif [ "$1" == "android-9.0" ];then
     manifest_url="https://gitlab.com/aosp-security/manifest"
     aosp="android-9.0.0_r53-r47"
     phh="android-9.0"
@@ -49,7 +49,7 @@ buildVariant() {
 	make BUILD_NUMBER=$rom_fp installclean
 	make BUILD_NUMBER=$rom_fp -j8 systemimage
 	make BUILD_NUMBER=$rom_fp vndk-test-sepolicy
-	xz -c $OUT/system.img -T0 > release/$rom_fp/system-${2}.img.xz
+	xz -c $OUT/system.img -T0 > release/$rom_fp/phh-${2}.img.xz
 }
 
 repo manifest -r > release/$rom_fp/manifest.xml
@@ -80,12 +80,12 @@ if [ "$1" = "android-10.0" ];then
 else
 	buildVariant treble_arm64_avN-userdebug arm64-aonly-vanilla-nosu
 	buildVariant treble_arm64_agS-userdebug arm64-aonly-gapps-su
-	#buildVariant treble_arm64_afS-userdebug arm64-aonly-floss-su
+	buildVariant treble_arm64_afS-userdebug arm64-aonly-floss-su
 	rm -Rf out/target/product/phhgsi*
 
 	buildVariant treble_arm64_bvN-userdebug arm64-ab-vanilla-nosu
 	buildVariant treble_arm64_bgS-userdebug arm64-ab-gapps-su
-	#buildVariant treble_arm64_bfS-userdebug arm64-ab-floss-su
+	buildVariant treble_arm64_bfS-userdebug arm64-ab-floss-su
 	rm -Rf out/target/product/phhgsi*
 
 	buildVariant treble_arm_avN-userdebug arm-aonly-vanilla-nosu
