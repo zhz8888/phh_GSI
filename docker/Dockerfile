@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-MAINTAINER Pierre-Hugues Husson <phh@phh.me>
+FROM ubuntu:18.04
+MAINTAINER zhz8888 <zhz1021@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
@@ -40,7 +40,7 @@ RUN dpkg-reconfigure locales
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
-RUN git config --global user.name "buildbot"
-RUN git config --global user.email "buildbot@phh.me"
+RUN git config --global user.name "zhz8888"
+RUN git config --global user.email "zhz1021@gmail.com"
 
 USER root
