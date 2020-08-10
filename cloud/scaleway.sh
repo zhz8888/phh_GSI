@@ -75,18 +75,18 @@ run_script 'export DEBIAN_FRONTEND=noninteractive && dpkg --add-architecture i38
 		git )'
 
 run_script '
-	git config --global user.name "Pierre-Hugues Husson" && \
-	git config --global user.email phh@phh.me && \
+	git config --global user.name "zhz8888" && \
+	git config --global user.email "zhz1021@gmail.com" && \
 	git config --global color.ui auto'
 
-run_script 'git clone https://github.com/phhusson/treble_experimentations'
+run_script 'git clone https://github.com/zhz8888/phh_GSI.git'
 
 run_script '\
 	mkdir build-dir && \
-	sed -E -i "s/(repo sync.*)-j 1/\1-j64/g" treble_experimentations/build.sh && \
-	sed -E -i "s/(make.*)-j8/\1-j24/g" treble_experimentations/build.sh
+	sed -E -i "s/(repo sync.*)-j 1/\1-j64/g" phh_GSI/build.sh && \
+	sed -E -i "s/(make.*)-j8/\1-j24/g" phh_GSI/build.sh
 	'
 
-run_script "cd build-dir && bash ../treble_experimentations/build.sh $android_version"
+run_script "cd build-dir && bash ../phh_GSI/build.sh $android_version"
 
 rsync -e 'ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' -rv "root@$machine_ip:build-dir/release" release
