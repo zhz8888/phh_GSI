@@ -16,7 +16,7 @@ config.read(os.path.join(selfpath, "../release/config.ini"))
 
 g = Github(config['github']['token'])
 
-repo = g.get_user().get_repo("treble_experimentations")
+repo = g.get_user().get_repo("phh_GSI")
 
 issue = repo.get_issue(int(sys.argv[1]))
 
