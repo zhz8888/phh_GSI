@@ -67,7 +67,7 @@ run_script 'export DEBIAN_FRONTEND=noninteractive && dpkg --add-architecture i38
 		python-pip \
 		python3-pip \
 		git \
-       wget )'
+       		wget )'
 
 run_script '
 	git config --global user.name "zhz8888" && \
@@ -87,4 +87,3 @@ run_script '\
 run_script "cd build-dir && bash ../phh_GSI/build.sh $android_version"
 
 docker cp "$name:"/build-dir/release release
-
