@@ -13,11 +13,11 @@ parse() {
         else
             lib=lib
         fi
-        #if [ -f "$so" ];then
-            #echo "File already parsed, skipping"
-            #echo -e "\t${2}${1}"
-        #    continue
-        #fi
+#        if [ -f "$so" ];then
+#            echo "File already parsed, skipping"
+#            echo -e "\t${2}${1}"
+#            continue
+#        fi
         found=false
         for path in /odm/$lib /vendor/$lib /system/$lib/vndk-27 /system/$lib/vndk-sp-27 /system/$lib;do
             if adb wait-for-device pull "$path"/"$so"  > /dev/null 2>/dev/null;then
